@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 
 import Web3 from 'web3';
 import {AbiItem} from 'web3-utils'
-import TwitterContract from './../../../../../local-eth/build/contracts/TwitterContract.json';
+import TwitterContract from './../../../../../twitter-web3-smartcontract/build/contracts/TwitterContract.json';
 import {Subject} from "rxjs";
 import {WindowRef} from "../window/windowref.service";
 
