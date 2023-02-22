@@ -1,1 +1,10 @@
 <p>profile works!</p>
+
+
+
+
+
+
+<a *ngIf="!connected" (click)="connectWallet()" class="relative bg-twitter-500 w-60 h-12 rounded-full flex items-center justify-center hover:bg-twitter-600 text-white">Connect</a>
+<span *ngIf="connected">Connected as {{accountId}}</span>
+<a *ngIf="connected" (click)="disconnect()" class="relative bg-twitter-500 w-60 h-12 rounded-full flex items-center justify-center hover:bg-twitter-600 text-white">Disconnect</a>
