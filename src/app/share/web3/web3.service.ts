@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {ApplicationRef, Injectable} from "@angular/core";
 
 import Web3 from 'web3';
 import {AbiItem} from 'web3-utils'
@@ -16,11 +16,13 @@ export class Web3Service {
 
     protected account = null;
 
-    public constructor(protected winRef: WindowRef) {
+    public constructor(protected winRef: WindowRef,
+                       protected appRef: ApplicationRef) {
         let that = this;
         this.winRef.nativeWindow.ethereum.on('accountsChanged', (accounts: any) => {
             if (accounts.length === 0) {
                 that.disconnect();
+                appRef.tick();
             } else if (accounts[0] !== that.account) {
                 that.account = accounts[0];
             }
