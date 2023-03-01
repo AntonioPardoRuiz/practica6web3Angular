@@ -6,6 +6,7 @@
     <div class="flex-grow">
       <p class="text-gray-600 dark:text-gray-400 font-normal text-sm"><span class="font-bold text-black dark:text-white text-base">{{tweet?.author?.name}}</span> {{tweet?.author?.id}} &middot; {{tweet?.date | date: 'd MMM y'}}</p>
       <p class="text-[15px] dark:text-white">{{tweet?.message}}</p>
+      <p *ngIf="tweet?.image != null && tweet?.image != ''" class="text-[15px] dark:text-white"><img [src]="'https://ipfs.io/ipfs/' + tweet?.image"></p>
     </div>
     <div class="shrink-0">
       <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
